@@ -16,6 +16,128 @@ header, section {
   padding-top: 5rem;
 }
 
+h3.text-inside-line {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #000; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+}
+
+h3.text-inside-line span { 
+  background:#fff; 
+  padding:0 10px; 
+}
+
+/* Dark & Light mode */
+.switch {
+font-size: 17px;
+position: relative;
+display: inline-block;
+width: 64px;
+height: 34px;
+}
+
+.switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #73C0FC;
+transition: .4s;
+border-radius: 30px;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 30px;
+width: 30px;
+border-radius: 20px;
+left: 2px;
+bottom: 2px;
+z-index: 2;
+background-color: #e8e8e8;
+transition: .4s;
+}
+
+.sun svg {
+position: absolute;
+top: 6px;
+left: 36px;
+z-index: 1;
+width: 24px;
+height: 24px;
+}
+
+.moon svg {
+fill: #73C0FC;
+position: absolute;
+top: 5px;
+left: 5px;
+z-index: 1;
+width: 24px;
+height: 24px;
+}
+
+/* .switch:hover */.sun svg {
+animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+
+0% {
+  transform: rotate(0);
+}
+
+100% {
+  transform: rotate(360deg);
+}
+}
+
+/* .switch:hover */.moon svg {
+animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+
+0% {
+  transform: rotate(0deg);
+}
+
+25% {
+  transform: rotate(-10deg);
+}
+
+75% {
+  transform: rotate(10deg);
+}
+
+100% {
+  transform: rotate(0deg);
+}
+}
+
+.input:checked + .slider {
+background-color: #183153;
+}
+
+.input:focus + .slider {
+box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+transform: translateX(30px);
+}
+
 /* Anchors */
 a {
   color: black;
@@ -36,6 +158,15 @@ a:hover {
   text-decoration: none;
 }
 
+.nav-link {
+  color: black !important;
+}
+
+.nav-link.active {
+  color: rgb(139, 0, 204) !important;
+}
+
+
 /* Social Icons a color */
 .social-icons a {
   color: black!important;
@@ -44,8 +175,8 @@ a:hover {
 
 /* User Image */
 .user-image {
-  width: 140px;
-  height: 140px;
+  width: 225px;
+  height: 225px;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
@@ -67,6 +198,67 @@ a:hover {
   color: black!important;
 }
 
+/* Emoji Animation */
+.emoji::after {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.camera::after {
+  content: '📷';
+  --emoji: '📸';
+  animation-name: twoFrames;
+  animation-duration: 1.2s;
+}
+
+.earth::after {
+  content: '🌎';
+  --emoji-1: '🌍';
+  --emoji-2: '🌏';
+  animation-name: threeFrames;
+  animation-duration: 1.5s;
+}
+
+.games::after {
+  content: '🎮';
+  --emoji: '🕹️';
+  animation-name: twoFrames;
+  animation-duration: 1.2s;
+}
+
+.pc::after {
+  content: '🖥️';
+  --emoji-1: '💻';
+  --emoji-2: '👨‍💻';
+  animation-name: threeFrames;
+  animation-duration: 1.5s;
+}
+
+.book::after {
+  content: '📕';
+  --emoji: '📖';
+  animation-name: twoFrames;
+  animation-duration: 1.2s;
+}
+
+@keyframes twoFrames {
+  50% {
+      content: var(--emoji);
+  }
+}
+
+@keyframes threeFrames {
+  33.333% {
+      content: var(--emoji-1);
+  }
+
+  66.666% {
+      content: var(--emoji-2);
+  }
+}
+
+
+
 /* Timeline */
 .timeline-container {
   width: 80%;
@@ -85,7 +277,7 @@ a:hover {
   width: 2px;
   height: 100%;
   background: #CCD1D9;
-  z-index: 1
+  z-index: 1;
 }
 .timeline-block {
   width: -webkit-calc(50% + 8px);
@@ -118,7 +310,7 @@ a:hover {
   border: 2px solid black;
   background: white;
   margin-top: 10px;
-  z-index: 9999
+  z-index: 9999;
 }
 
 .timeline-content {
@@ -128,14 +320,14 @@ a:hover {
 }
 
 .timeline-block-left .timeline-content {
- text-align:right;
+  text-align:right;
 }
 
 .timeline-content .timeline-h3 {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 25px;
-  font-weight: 500
+  font-weight: 500;
 }
 
 .timeline-content .timeline-span {
@@ -158,24 +350,24 @@ a:hover {
   }
 
   .timeline-block {
-     width: 100%;
-     margin-bottom: 30px;
+    width: 100%;
+    margin-bottom: 30px;
   }
   .timeline-block-right {
-     float: none;
+    float: none;
   }
 
   .timeline-block-left {
-     float: none;
-     direction: ltr;
+    float: none;
+    direction: ltr;
   }
- 
- .timeline-block-left .timeline-content {
-   text-align:left;
-   order: 2;
- }
- 
- .timeline-block-left .marker {
-   order: 1;
- }
+
+  .timeline-block-left .timeline-content {
+    text-align:left;
+    order: 2;
+  }
+
+  .timeline-block-left .marker {
+    order: 1;
+  }
 }
