@@ -1,6 +1,13 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,300,600');
 
+:root {
+  --bs-primary: rgb(139, 0, 204);
+  --bs-primary-rgb: 139, 0, 204;
+  --bs-primary-contrast: #ffffff; /* Colore di contrasto per il testo */
+  --bs-primary-transparent: rgba(139, 0, 204, 0.5); /* Colore primario con trasparenza */
+}
+
 /* HTML */
 html {
   scroll-behavior: smooth;
@@ -163,7 +170,7 @@ a:hover {
 }
 
 .nav-link.active {
-  color: rgb(139, 0, 204) !important;
+  color: var(--bs-primary) !important;
 }
 
 
@@ -370,4 +377,7 @@ a:hover {
   .timeline-block-left .marker {
     order: 1;
   }
+}
+.copyright{
+  color: black;
 }
