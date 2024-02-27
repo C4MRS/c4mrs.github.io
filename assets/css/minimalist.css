@@ -292,7 +292,7 @@ a:hover {
   margin-left: -1px;
   width: 2px;
   height: 100%;
-  background: #ccd1d9;
+  background: black;
   z-index: 1;
 }
 .timeline-block {
@@ -333,6 +333,7 @@ a:hover {
   width: 95%;
   padding: 0 15px;
   color: black;
+  background-color: white;
 }
 
 .timeline-block-left .timeline-content {

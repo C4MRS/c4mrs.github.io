@@ -336,7 +336,7 @@ a:hover {
   height: 16px;
   border-radius: 50%;
   border: 2px solid black;
-  background: white;
+  background: rgb(216, 118, 6);
   margin-top: 10px;
   z-index: 9999;
 }
