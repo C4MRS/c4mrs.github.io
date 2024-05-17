@@ -1,31 +1,27 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/imgios/minimalist/master/.github/minimalist-512.png" width="64">
-  <h3 align="center"><code>minimalist</code></h3>
-</p>
+# Portfolio
 
-<p align="center">Clean HTML portfolio template, responsive, open-source, and ready to use!</p>
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
-<p align="center">
-  <a href="https://imgios.github.io/minimalist/" target="_blank"><img alt="minimalist Demo" src="https://img.shields.io/badge/Demo-343a40?style=flat-square"></a><a href="https://getbootstrap.com/" target="_blank"><img alt="Get Bootstrap" src="https://img.shields.io/badge/Built%20with%20Bootstrap-f8f9fa?style=flat-square"></a><a href="https://github.com/imgios/minimalist/fork" target="_blank"><img alt="Fork minimalist" src="https://img.shields.io/badge/Create%20your%20own%20portfolio%20on%20GitHub-343a40?style=flat-square"></a>
-</p>
+## Development server
 
-## Contributors
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-<a href="https://github.com/imgios/minimalist/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=imgios/minimalist" />
-</a>
+## Code scaffolding
 
-## Contributing
-If you want to make it with different colors, add new features, fix any bug, or just contributing, **you're welcome**!
-1. Start by forking the repository.
-2. Create your own branch from `develop`: 
-    - `feature/featureName`
-    - `bug/bugName`
-3. Do the magic and write good commits message!
-4. Create a Pull Request.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Please, read [CONTRIBUTING.md](CONTRIBUTING.md) to know more about it.
+## Build
 
-## License
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
