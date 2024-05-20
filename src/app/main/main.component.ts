@@ -1,12 +1,12 @@
-import { Component, HostListener } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { Component, HostListener } from "@angular/core";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
-  selector: 'app-main',
+  selector: "app-main",
   standalone: true,
   imports: [MatIconModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css',
+  templateUrl: "./main.component.html",
+  styleUrl: "./main.component.css",
 })
 export class MainComponent {
   private prevScrollPos: number = window.pageYOffset;
@@ -14,22 +14,15 @@ export class MainComponent {
   ngOnInit(): void {
     this.myAge();
     this.scrollListener = this.onWindowScroll.bind(this);
-    window.addEventListener('scroll', this.scrollListener);
+    window.addEventListener("scroll", this.scrollListener);
   }
 
   scrollToElement(element: string): void {
-    if (element == 'aboutme' && window.innerWidth < 768) {
-      element = 'aboutmespan';
-    } else if (element == 'hobbies' && window.innerWidth < 768) {
-      element = 'hobbiesspan';
-    } else if (element == 'projects' && window.innerWidth <= 768) {
-      element = 'projectsspan';
-    }
     const elementID = document.getElementById(element);
     elementID?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
     });
   }
 
@@ -37,29 +30,29 @@ export class MainComponent {
     const birthYear = 2002;
     const currentYear = new Date().getFullYear();
 
-    const ageElement = document.getElementById('age');
+    const ageElement = document.getElementById("age");
     if (ageElement) {
       const age = currentYear - birthYear;
       ageElement.innerHTML = age.toString();
     } else {
-      console.error('Element not found');
+      console.error("Element not found");
     }
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', this.scrollListener);
+    window.removeEventListener("scroll", this.scrollListener);
   }
 
   onWindowScroll() {
     const currentScrollPos = window.pageYOffset;
-    const navbar = document.getElementById('navbar');
+    const navbar = document.getElementById("navbar");
     if (navbar) {
       if (this.prevScrollPos > currentScrollPos) {
         // User has scrolled up
-        navbar.classList.add('show');
+        navbar.classList.add("show");
       } else {
         // User has scrolled down
-        navbar.classList.remove('show');
+        navbar.classList.remove("show");
       }
     }
     // Update previous scroll position
@@ -67,6 +60,6 @@ export class MainComponent {
   }
 
   goToPage(page: string): void {
-    window.open(page, '_blank');
+    window.open(page, "_blank");
   }
 }
