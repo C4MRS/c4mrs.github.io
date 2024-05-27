@@ -11,10 +11,31 @@ import { MatIconModule } from "@angular/material/icon";
 export class MainComponent {
   private prevScrollPos: number = window.pageYOffset;
   private scrollListener = this.onWindowScroll.bind(this);
+
   ngOnInit(): void {
     this.myAge();
     this.scrollListener = this.onWindowScroll.bind(this);
     window.addEventListener("scroll", this.scrollListener);
+
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    if (dropdownButton && dropdownMenu) {
+      dropdownButton.addEventListener("click", () => {
+        const isExpanded =
+          dropdownButton.getAttribute("aria-expanded") === "true";
+        dropdownButton.setAttribute("aria-expanded", (!isExpanded).toString());
+        if (isExpanded) {
+          this.closeDropdown();
+        } else {
+          this.openDropdown();
+        }
+      });
+    }
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener("scroll", this.scrollListener);
   }
 
   scrollToElement(element: string): void {
@@ -39,10 +60,6 @@ export class MainComponent {
     }
   }
 
-  ngOnDestroy() {
-    window.removeEventListener("scroll", this.scrollListener);
-  }
-
   onWindowScroll() {
     const currentScrollPos = window.pageYOffset;
     const navbar = document.getElementById("navbar");
@@ -55,8 +72,38 @@ export class MainComponent {
         navbar.classList.remove("show");
       }
     }
+
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    if (
+      dropdownButton &&
+      dropdownMenu &&
+      dropdownButton.getAttribute("aria-expanded") === "true"
+    ) {
+      this.closeDropdown();
+    }
+
     // Update previous scroll position
     this.prevScrollPos = currentScrollPos;
+  }
+
+  openDropdown() {
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    if (dropdownButton && dropdownMenu) {
+      dropdownButton.setAttribute("aria-expanded", "true");
+      dropdownMenu.classList.remove("hidden");
+    }
+  }
+
+  closeDropdown() {
+    const dropdownButton = document.getElementById("dropdownButton");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    if (dropdownButton && dropdownMenu) {
+      dropdownButton.setAttribute("aria-expanded", "false");
+      dropdownMenu.classList.add("hidden");
+    }
   }
 
   goToPage(page: string): void {
