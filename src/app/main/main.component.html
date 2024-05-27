@@ -1,12 +1,14 @@
 <html class="scroll-smooth">
   <body data-theme="sunset" class="font-mono h-auto bg-base-300">
-    <div
-      id="navbar"
-      class="navbar bg-base-300 shadow-xl show text-gray-300 z-50"
-    >
+    <div id="navbar" class="navbar bg-base-300 shadow-xl show text-gray-300">
       <div class="navbar-start lg:w-auto lg:mr-auto">
         <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <div
+            tabindex="0"
+            role="button"
+            class="btn btn-ghost lg:hidden"
+            id="dropdownButton"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -23,8 +25,10 @@
             </svg>
           </div>
           <ul
+            id="dropdownMenu"
+            aria-expanded="false"
             tabindex="0"
-            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            class="menu menu-sm dropdown-content mt-3 z-50 bg-base-300 p-2 shadow rounded-box w-52"
           >
             <li><a (click)="scrollToElement('aboutme')">About me</a></li>
             <li><a (click)="scrollToElement('hobbies')">My Hobbies</a></li>
@@ -212,15 +216,11 @@
             </div>
           </div>
         </div>
-        <div
-          class="flex justify-center items-center h-fit w-auto -mt-16 sm:mt-0"
-        >
+        <div class="flex justify-center items-center sm:h-fit w-auto sm:mt-0">
           <img
             alt=""
             src="../../assets/myself2.png"
-            class="object-cover"
-            width="350"
-            height="150"
+            class="object-cover sm:w-[350px] sm:h-[350px] w-[100px] h-[100px]"
           />
         </div>
         <div
@@ -234,168 +234,168 @@
           </p>
         </div>
       </section>
-      <div class="w-full h-36">
-        <span class="relative flex justify-center mt-10 w-full">
-          <div
-            class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-75"
-          ></div>
-          <span class="relative z-10 bg-base-300 px-6 text-white"
-            >MY SKILLS</span
-          >
-        </span>
-      </div>
       <div
-        class="flex flex-row flex-wrap justify-center items-center h-auto w-auto gap-2 -mt-10"
+        class="flex flex-row flex-wrap justify-center items-center h-auto w-auto sm:-mt-10 -mt-5"
       >
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-plain.svg"
-          (click)="goToPage('https://developer.android.com/?hl=it')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="android logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-plain.svg"
-          (click)="goToPage('https://angular.io')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="angularjs logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg"
-          (click)="goToPage('https://www.arduino.cc')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="arduino logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-          (click)="goToPage('https://getbootstrap.com')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="bootstrap logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-          (click)="goToPage('https://tailwindcss.com')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="tailwind logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg"
-          (click)="goToPage('https://www.w3schools.com/c/c_intro.php')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="c logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg"
-          (click)="goToPage('https://www.w3schools.com/cpp/cpp_intro.asp')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="cplusplus logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg"
-          (click)="goToPage('https://www.w3schools.com/css/css_intro.asp')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="css3 logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
-          (click)="goToPage('https://www.docker.com')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="docker logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg"
-          (click)="goToPage('https://www.w3schools.com/html/html_intro.asp')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="html5 logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-          (click)="goToPage('https://www.w3schools.com/java/java_intro.asp')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="java logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
-          (click)="goToPage('https://www.w3schools.com/js/js_intro.asp')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="javascript logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-          (click)="goToPage('https://www.mysql.com/it/')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="mysql logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-          (click)="goToPage('https://www.php.net')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="php logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-          (click)="goToPage('https://www.python.org')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="python logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-          (click)="goToPage('https://react.dev')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="react logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tomcat/tomcat-original.svg"
-          (click)="goToPage('https://tomcat.apache.org')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="tomcat logo"
-        />
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
-          (click)="goToPage('https://www.typescriptlang.org')"
-          height="60"
-          width="60"
-          class="cursor-pointer"
-          alt="typescript logo"
-        />
+        <div class="w-full h-36">
+          <span class="relative flex justify-center mt-10 w-full">
+            <div
+              class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-75"
+            ></div>
+            <span class="relative bg-base-300 px-6 text-white">MY SKILLS</span>
+          </span>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-2 -mt-10">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-plain.svg"
+            (click)="goToPage('https://developer.android.com/?hl=it')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="android logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-plain.svg"
+            (click)="goToPage('https://angular.io')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="angularjs logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg"
+            (click)="goToPage('https://www.arduino.cc')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="arduino logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+            (click)="goToPage('https://getbootstrap.com')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="bootstrap logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            (click)="goToPage('https://tailwindcss.com')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="tailwind logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg"
+            (click)="goToPage('https://www.w3schools.com/c/c_intro.php')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="c logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg"
+            (click)="goToPage('https://www.w3schools.com/cpp/cpp_intro.asp')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="cplusplus logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg"
+            (click)="goToPage('https://www.w3schools.com/css/css_intro.asp')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="css3 logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+            (click)="goToPage('https://www.docker.com')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="docker logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg"
+            (click)="goToPage('https://www.w3schools.com/html/html_intro.asp')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="html5 logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+            (click)="goToPage('https://www.w3schools.com/java/java_intro.asp')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="java logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+            (click)="goToPage('https://www.w3schools.com/js/js_intro.asp')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="javascript logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+            (click)="goToPage('https://www.mysql.com/it/')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="mysql logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+            (click)="goToPage('https://www.php.net')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="php logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            (click)="goToPage('https://www.python.org')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="python logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+            (click)="goToPage('https://react.dev')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="react logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tomcat/tomcat-original.svg"
+            (click)="goToPage('https://tomcat.apache.org')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="tomcat logo"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
+            (click)="goToPage('https://www.typescriptlang.org')"
+            height="60"
+            width="60"
+            class="cursor-pointer"
+            alt="typescript logo"
+          />
+        </div>
       </div>
     </div>
     <div
       id="hobbies"
-      class="flex flex-col md:flex-row justify-center items-center h-auto md:h-screen w-auto pt-5 md:space-x-5"
+      class="flex flex-col md:flex-row justify-center items-center h-auto md:h-screen w-auto pt-5 md:space-x-5 sm:mt-0 mt-20"
     >
       <span class="md:hidden flex items-center w-full">
         <span class="h-px flex-1 bg-secondary"></span>
@@ -515,51 +515,54 @@
     </div>
     <div
       id="myprojects"
-      class="flex flex-wrap justify-center content-center gap-10 mb-10 h-screen"
+      class="grid xl:grid-cols-[1fr_auto] justify-center content-center h-dvh mb-10 sm:mt-0 mt-10"
     >
-      <span class="lg:hidden flex items-center w-full">
+      <span class="xl:hidden flex items-center w-full mb-10">
         <span class="h-px flex-1 bg-secondary"></span>
         <span class="shrink-0 px-6 text-white font-bold">MY PROJECTS</span>
         <span class="h-px flex-1 bg-secondary"></span>
       </span>
-      <article
-        (click)="goToPage('https://github.com/C4MRS/StayUp')"
-        class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
-      >
-        <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
-          <span class="block text-xs text-white"> StayUp </span>
+      <div class="flex flex-wrap justify-center content-center gap-10">
+        <article
+          (click)="goToPage('https://github.com/C4MRS/StayUp')"
+          class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
+        >
+          <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
+            <span class="block text-xs text-white"> StayUp </span>
 
-          <h3 class="mt-0.5 text-lg font-medium text-white">
-            Webapp for Gym Members and Personal Trainers for Academic Purpose.
-          </h3>
-        </div>
-      </article>
-      <article
-        (click)="goToPage('https://github.com/C4MRS/FlyHigh')"
-        class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
-      >
-        <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
-          <span class="block text-xs text-white">FlyHigh</span>
+            <h3 class="mt-0.5 text-lg font-medium text-white">
+              Webapp for Gym Members and Personal Trainers for Academic Purpose.
+            </h3>
+          </div>
+        </article>
+        <article
+          (click)="goToPage('https://github.com/C4MRS/FlyHigh')"
+          class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
+        >
+          <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
+            <span class="block text-xs text-white">FlyHigh</span>
 
-          <h3 class="mt-0.5 text-lg font-medium text-white">
-            Webapp to purchase tickets in Europe for Academic Purpose.
-          </h3>
-        </div>
-      </article>
-      <article
-        (click)="goToPage('https://github.com/C4MRS/PALS')"
-        class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
-      >
-        <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
-          <span class="block text-xs text-white"> PALS </span>
+            <h3 class="mt-0.5 text-lg font-medium text-white">
+              Webapp to purchase tickets in Europe for Academic Purpose.
+            </h3>
+          </div>
+        </article>
+        <article
+          (click)="goToPage('https://github.com/C4MRS/PALS')"
+          class="h-auto w-80 animate-gradient-move rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_2s]"
+        >
+          <div class="h-full rounded-[10px] bg-base-200 p-4 !pt-20 sm:p-6">
+            <span class="block text-xs text-white"> PALS </span>
 
-          <h3 class="mt-0.5 text-lg font-medium text-white">
-            Mobile Application WIP
-          </h3>
-        </div>
-      </article>
+            <h3 class="mt-0.5 text-lg font-medium text-white">
+              Mobile Application WIP
+            </h3>
+          </div>
+        </article>
+      </div>
+
       <div
-        class="lg:flex flex-col space-y-20 mr-10 text-xl after:h-1/6 hidden"
+        class="xl:flex flex-col space-y-20 mr-10 text-xl after:h-1/6 hidden"
         id="projectsline"
       >
         <p
